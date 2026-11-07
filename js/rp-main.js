@@ -1,6 +1,6 @@
 /**
  * RP GROUP OF HOTELS - MAIN INTERACTIVE JAVASCRIPT
- * Optimized for Meta Ads Conversion, Banquet Calculations & Direct Inquiries
+ * 100% Responsive, Touch-Friendly, Optimized for Meta Ads Conversion
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -66,15 +66,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   const header = document.querySelector('.rp-header');
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 40) {
       header?.classList.add('scrolled');
     } else {
       header?.classList.remove('scrolled');
     }
-  });
+  }, { passive: true });
 
   // ==========================================
-  // 3. DATE PICKERS
+  // 3. DATE PICKERS INITIALIZATION
   // ==========================================
   const checkinInput = document.getElementById('rpCheckin');
   const checkoutInput = document.getElementById('rpCheckout');
@@ -105,52 +105,61 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // 4. PROPERTY SELECTION & FILTER
-  // ==========================================
-  const propFilterBtns = document.querySelectorAll('.prop-filter-btn');
-  const propCards = document.querySelectorAll('.property-card');
-
-  propFilterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      propFilterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const filter = btn.getAttribute('data-filter');
-      propCards.forEach(card => {
-        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-
-  // ==========================================
-  // 5. MOBILE DRAWER NAVIGATION
+  // 4. MOBILE DRAWER NAVIGATION & TOUCH OVERLAY
   // ==========================================
   const mobileToggle = document.getElementById('rpMobileToggle');
   const mobileDrawer = document.getElementById('rpMobileDrawer');
   const drawerClose = document.getElementById('rpDrawerClose');
+  let drawerOverlay = document.getElementById('rpDrawerOverlay');
 
-  if (mobileToggle && mobileDrawer) {
-    mobileToggle.addEventListener('click', () => {
-      mobileDrawer.classList.toggle('active');
-    });
+  if (!drawerOverlay && mobileDrawer) {
+    drawerOverlay = document.createElement('div');
+    drawerOverlay.id = 'rpDrawerOverlay';
+    drawerOverlay.className = 'rp-drawer-overlay';
+    document.body.appendChild(drawerOverlay);
+  }
 
-    drawerClose?.addEventListener('click', () => {
+  function openDrawer() {
+    if (mobileDrawer) {
+      mobileDrawer.classList.add('active');
+      mobileDrawer.style.transform = 'translateX(0)';
+    }
+    drawerOverlay?.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    if (mobileDrawer) {
       mobileDrawer.classList.remove('active');
-    });
+      mobileDrawer.style.transform = 'translateX(-100%)';
+    }
+    drawerOverlay?.classList.remove('active');
+    document.body.style.overflow = '';
+  }
 
-    document.addEventListener('click', (e) => {
-      if (!mobileDrawer.contains(e.target) && !mobileToggle.contains(e.target)) {
-        mobileDrawer.classList.remove('active');
+  if (mobileToggle) {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (mobileDrawer?.classList.contains('active')) {
+        closeDrawer();
+      } else {
+        openDrawer();
       }
     });
   }
 
+  drawerClose?.addEventListener('click', closeDrawer);
+  drawerOverlay?.addEventListener('click', closeDrawer);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeDrawer();
+      closeBookingModal();
+    }
+  });
+
   // ==========================================
-  // 6. LEAD FORM SUBMISSIONS (META ADS CONVERSION)
+  // 5. LEAD FORM SUBMISSIONS (META ADS CONVERSION)
   // ==========================================
   const metaLeadForm = document.getElementById('metaLeadForm');
   if (metaLeadForm) {
@@ -176,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // 7. TOAST NOTIFICATION UTILITY
+  // 6. TOAST NOTIFICATION UTILITY
   // ==========================================
   function showToast(msg) {
     let toast = document.querySelector('.rp-toast');
@@ -185,19 +194,19 @@ document.addEventListener('DOMContentLoaded', () => {
       toast.className = 'rp-toast';
       toast.style.cssText = `
         position: fixed;
-        bottom: 90px;
+        bottom: 85px;
         left: 50%;
         transform: translateX(-50%) translateY(100px);
         background: #0b1320;
         color: #ffffff;
         border: 1px solid #d4af37;
-        padding: 1.1rem 1.8rem;
+        padding: 1rem 1.6rem;
         border-radius: 8px;
         box-shadow: 0 10px 40px rgba(0,0,0,0.5);
         z-index: 3000;
         font-size: 0.88rem;
-        max-width: 90vw;
-        width: 500px;
+        max-width: 92vw;
+        width: 480px;
         text-align: center;
         opacity: 0;
         transition: all 0.35s ease;
@@ -216,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // 8. ROOM BOOKING MODAL
+  // 7. ROOM BOOKING MODAL
   // ==========================================
   const bookingModal = document.getElementById('rpBookingModal');
   const modalClose = document.getElementById('modalCloseBtn');
@@ -226,17 +235,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const propSelect = document.getElementById('modalPropSelect');
     if (propSelect) propSelect.value = propName;
     bookingModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
   }
 
   function closeBookingModal() {
     if (!bookingModal) return;
     bookingModal.style.display = 'none';
+    document.body.style.overflow = '';
   }
 
   document.querySelectorAll('[data-open-booking]').forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const prop = btn.getAttribute('data-open-booking') || 'RP Grand Regalia';
+      const prop = btn.getAttribute('data-open-booking') || 'RP Grand Regalia, Patna';
       openBookingModal(prop);
     });
   });
