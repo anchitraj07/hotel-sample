@@ -1,0 +1,1332 @@
+/* ==========================================================================
+   RP GROUP OF HOTELS - LUXURY HOSPITALITY CHAIN (PATNA REGION)
+   High-Conversion & Animated Theme for Meta Ads & Brand Promotion
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Royal Gold & Imperial Saffron Accents */
+  --rp-gold: #d4af37;
+  --rp-gold-light: #f3e5ab;
+  --rp-gold-bright: #e5b84c;
+  --rp-gold-dark: #a67c1e;
+  --rp-gold-gradient: linear-gradient(135deg, #fbe7b2 0%, #d4af37 50%, #997825 100%);
+  --rp-gold-glow: 0 0 30px rgba(212, 175, 55, 0.35);
+
+  /* Royal Navy & Heritage Obsidian */
+  --rp-dark: #0b1320;
+  --rp-dark-surface: #111b2b;
+  --rp-dark-card: #182335;
+  --rp-dark-border: rgba(212, 175, 55, 0.24);
+
+  /* Alabaster & Warm Ivory */
+  --rp-bg: #faf7f2;
+  --rp-surface: #ffffff;
+  --rp-warm: #f5efe6;
+  --rp-border: #e8e0d2;
+
+  /* Typography */
+  --font-royal: 'Cinzel', serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Text Colors */
+  --text-main: #131a26;
+  --text-muted: #5e6b7d;
+  --text-light: #f5f8fc;
+  --text-gold: #b38622;
+
+  /* UI Variables */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 4px 15px rgba(11, 19, 32, 0.06);
+  --shadow-md: 0 10px 30px rgba(11, 19, 32, 0.1);
+  --shadow-lg: 0 20px 50px rgba(11, 19, 32, 0.18);
+  --shadow-gold: 0 12px 35px rgba(212, 175, 55, 0.28);
+  --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--rp-bg);
+  color: var(--text-main);
+  line-height: 1.65;
+  overflow-x: hidden;
+  padding-bottom: 70px; /* Space for sticky bottom bar on mobile */
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-bottom: 0;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  transition: var(--transition);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.container-wide {
+  width: 100%;
+  max-width: 1520px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ==========================================================================
+   META ADS PROMOTIONAL TICKER / ANNOUNCEMENT BAR
+   ========================================================================== */
+.promo-ticker-bar {
+  background: #060c14;
+  color: #e5b84c;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0.55rem 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+  overflow: hidden;
+  position: relative;
+  z-index: 1020;
+}
+
+.ticker-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.ticker-badge {
+  background: var(--rp-gold-gradient);
+  color: #111;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-family: var(--font-royal);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.ticker-code {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   TOP UTILITY BAR (PATNA CENTRAL DESK)
+   ========================================================================== */
+.rp-utility-bar {
+  background: var(--rp-dark);
+  color: #9ab0cf;
+  font-size: 0.76rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0.4rem 0;
+}
+
+.rp-utility-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.utility-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.utility-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #b5c7df;
+  transition: var(--transition);
+}
+
+.utility-item:hover {
+  color: var(--rp-gold-light);
+}
+
+.utility-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.whatsapp-pill-sm {
+  background: #25d366;
+  color: #ffffff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 0.72rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.whatsapp-pill-sm:hover {
+  background: #1ebc57;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   MAIN NAVIGATION HEADER (RP GROUP)
+   ========================================================================== */
+.rp-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(11, 19, 32, 0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--rp-dark-border);
+  transition: var(--transition);
+}
+
+.rp-header.scrolled {
+  background: rgba(7, 13, 22, 0.98);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.rp-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 84px;
+  transition: var(--transition);
+}
+
+.rp-header.scrolled .rp-header-inner {
+  height: 72px;
+}
+
+/* Brand Identity */
+.rp-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rp-crest {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rp-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.rp-brand-title {
+  font-family: var(--font-royal);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #ffffff;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+
+.rp-brand-title span {
+  color: var(--rp-gold);
+}
+
+.rp-brand-sub {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: var(--rp-gold-bright);
+  text-transform: uppercase;
+}
+
+/* Nav Menu Links */
+.rp-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+.rp-nav-link {
+  font-family: var(--font-royal);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #d1dde9;
+  position: relative;
+  padding: 0.4rem 0;
+}
+
+.rp-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--rp-gold-gradient);
+  transition: var(--transition);
+}
+
+.rp-nav-link:hover,
+.rp-nav-link.active {
+  color: var(--rp-gold-light);
+}
+
+.rp-nav-link:hover::after,
+.rp-nav-link.active::after {
+  width: 100%;
+}
+
+.header-cta-cluster {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+/* Luxury Buttons */
+.btn-rp-gold {
+  background: var(--rp-gold-gradient);
+  color: #111;
+  font-family: var(--font-royal);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-rp-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+  filter: brightness(1.06);
+}
+
+.btn-rp-outline {
+  border: 1px solid var(--rp-gold);
+  color: var(--rp-gold-light);
+  font-family: var(--font-royal);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.8rem 1.4rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+}
+
+.btn-rp-outline:hover {
+  background: var(--rp-gold);
+  color: #111;
+  transform: translateY(-2px);
+}
+
+.btn-rp-dark {
+  background: var(--rp-dark);
+  color: #ffffff;
+  border: 1px solid var(--rp-dark-border);
+  font-family: var(--font-royal);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-rp-dark:hover {
+  background: var(--rp-dark-card);
+  border-color: var(--rp-gold);
+  color: var(--rp-gold-light);
+  transform: translateY(-2px);
+}
+
+/* Mobile Toggle */
+.rp-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+}
+
+.rp-mobile-toggle span {
+  display: block;
+  height: 2px;
+  width: 26px;
+  background: var(--rp-gold);
+  transition: var(--transition);
+}
+
+/* ==========================================================================
+   CINEMATIC HERO SECTION & DIRECT BOOKING BAR
+   ========================================================================== */
+.rp-hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #070d16;
+  overflow: hidden;
+}
+
+.rp-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.rp-hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  animation: heroZoom 14s infinite alternate ease-in-out;
+}
+
+@keyframes heroZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+.rp-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 19, 32, 0.45) 0%,
+    rgba(11, 19, 32, 0.75) 55%,
+    rgba(11, 19, 32, 0.96) 100%
+  );
+  z-index: 2;
+}
+
+.rp-hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem 7.5rem;
+  color: #ffffff;
+}
+
+.hero-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 1.2rem;
+  background: rgba(11, 19, 32, 0.75);
+  border: 1px solid var(--rp-gold);
+  border-radius: 40px;
+  backdrop-filter: blur(8px);
+  margin-bottom: 1.5rem;
+  font-family: var(--font-royal);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  color: var(--rp-gold-bright);
+  text-transform: uppercase;
+}
+
+.hero-main-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.hero-main-title em {
+  font-style: italic;
+  color: var(--rp-gold-light);
+  font-weight: 500;
+}
+
+.hero-lead-text {
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  color: #dbe4ee;
+  max-width: 780px;
+  margin: 0 auto 2.5rem;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.hero-cta-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   FLOATING BOOKING & BANQUET INQUIRY ENGINE (META ADS CONVERSION)
+   ========================================================================== */
+.booking-engine-wrapper {
+  position: relative;
+  z-index: 50;
+  margin-top: -65px;
+  margin-bottom: 4.5rem;
+}
+
+.booking-engine-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 50px rgba(11, 19, 32, 0.16), 0 0 0 1px var(--rp-border);
+  padding: 1.5rem 2rem;
+  position: relative;
+}
+
+.engine-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid var(--rp-border);
+  padding-bottom: 0.8rem;
+}
+
+.engine-tab-btn {
+  font-family: var(--font-royal);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: var(--transition);
+}
+
+.engine-tab-btn.active {
+  color: #111;
+  background: var(--rp-gold-gradient);
+}
+
+.engine-grid-room {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.5fr 1.4fr 1.6fr;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.engine-col {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--rp-border);
+  padding-right: 1.2rem;
+}
+
+.engine-col:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+
+.engine-label {
+  font-family: var(--font-royal);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rp-gold-dark);
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.engine-input-wrap input,
+.engine-input-wrap select {
+  width: 100%;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   STATS COUNTER BAR (TRUST SIGNALS)
+   ========================================================================== */
+.rp-trust-bar {
+  background: var(--rp-dark);
+  color: #ffffff;
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--rp-dark-border);
+  border-bottom: 1px solid var(--rp-dark-border);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.trust-item h3 {
+  font-family: var(--font-royal);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--rp-gold-bright);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.trust-item p {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #b5c7df;
+}
+
+/* ==========================================================================
+   PROPERTY PORTFOLIO (INTERACTIVE SWITCHER)
+   ========================================================================== */
+.section-properties {
+  padding: 7rem 0;
+  background: var(--rp-bg);
+}
+
+.section-head-center {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 3.5rem;
+}
+
+.sub-tag-gold {
+  display: inline-block;
+  font-family: var(--font-royal);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--rp-gold-dark);
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.sub-tag-gold::before,
+.sub-tag-gold::after {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 1px;
+  background: var(--rp-gold);
+  vertical-align: middle;
+  margin: 0 10px;
+}
+
+.section-main-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+  font-weight: 400;
+  color: var(--text-main);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.section-subtext {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Property Cards Grid */
+.property-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+.property-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--rp-border);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.property-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--rp-gold);
+}
+
+.property-media {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+}
+
+.property-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.property-card:hover .property-media img {
+  transform: scale(1.06);
+}
+
+.property-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  padding: 0.4rem 0.9rem;
+  background: rgba(11, 19, 32, 0.88);
+  border: 1px solid var(--rp-gold);
+  color: var(--rp-gold-light);
+  font-family: var(--font-royal);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  backdrop-filter: blur(8px);
+}
+
+.property-loc-badge {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  padding: 0.35rem 0.85rem;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--rp-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.property-details {
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.prop-name {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 400;
+  color: var(--text-main);
+  margin-bottom: 0.6rem;
+}
+
+.prop-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.prop-amenities-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rp-border);
+}
+
+.amenity-chip {
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--rp-dark);
+  background: var(--rp-warm);
+  padding: 0.35rem 0.75rem;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.prop-footer {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prop-rate-wrap small {
+  display: block;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.prop-rate {
+  font-family: var(--font-royal);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--rp-gold-dark);
+}
+
+/* ==========================================================================
+   GRAND WEDDINGS & BANQUET HALLS (HIGH META-AD CONVERSION FEATURE)
+   ========================================================================== */
+.section-banquets {
+  padding: 7rem 0;
+  background: var(--rp-dark);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.banquet-feature-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.banquet-media-stack {
+  position: relative;
+}
+
+.banquet-main-img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--rp-dark-border);
+}
+
+.banquet-floating-badge {
+  position: absolute;
+  bottom: -30px;
+  right: -20px;
+  background: #ffffff;
+  color: var(--rp-dark);
+  padding: 1.6rem 2rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--rp-gold);
+}
+
+.banquet-floating-badge h4 {
+  font-family: var(--font-royal);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--rp-gold-dark);
+}
+
+.banquet-floating-badge p {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+/* Interactive Banquet Cost & Capacity Calculator */
+.banquet-calculator-card {
+  background: var(--rp-dark-card);
+  border: 1px solid var(--rp-gold);
+  border-radius: var(--radius-md);
+  padding: 3rem;
+  box-shadow: var(--shadow-gold);
+}
+
+.calc-title {
+  font-family: var(--font-royal);
+  font-size: 1.45rem;
+  color: var(--rp-gold-bright);
+  margin-bottom: 0.5rem;
+}
+
+.calc-sub {
+  font-size: 0.88rem;
+  color: #9cb2cf;
+  margin-bottom: 2rem;
+}
+
+.calc-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.calc-label {
+  display: block;
+  font-family: var(--font-royal);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--rp-gold-light);
+  margin-bottom: 0.6rem;
+}
+
+.calc-slider-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.calc-range {
+  flex-grow: 1;
+  accent-color: var(--rp-gold);
+  cursor: pointer;
+}
+
+.calc-guest-display {
+  font-family: var(--font-royal);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  min-width: 110px;
+  text-align: right;
+}
+
+.calc-select,
+.calc-input {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-sm);
+  color: #ffffff;
+  font-size: 0.92rem;
+  outline: none;
+}
+
+.calc-select option {
+  background: var(--rp-dark);
+  color: #ffffff;
+}
+
+.calc-select:focus,
+.calc-input:focus {
+  border-color: var(--rp-gold);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.calc-estimate-result {
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px dashed var(--rp-gold);
+  border-radius: var(--radius-sm);
+  padding: 1.4rem;
+  margin-top: 1.8rem;
+  margin-bottom: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calc-estimate-result span {
+  font-size: 0.85rem;
+  color: #d8e5f5;
+}
+
+.calc-estimate-result strong {
+  font-family: var(--font-royal);
+  font-size: 1.6rem;
+  color: var(--rp-gold-bright);
+}
+
+/* ==========================================================================
+   META ADS CAMPAIGN / LEAD MAGNET FORM
+   ========================================================================== */
+.section-meta-lead {
+  padding: 6rem 0;
+  background: #ffffff;
+  border-top: 1px solid var(--rp-border);
+  border-bottom: 1px solid var(--rp-border);
+}
+
+.lead-box-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.lead-perk-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.lead-perk-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.perk-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--rp-warm);
+  border: 1px solid var(--rp-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--rp-gold-dark);
+  flex-shrink: 0;
+}
+
+.lead-form-card {
+  background: var(--rp-dark);
+  color: #ffffff;
+  padding: 3rem 2.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--rp-gold);
+  box-shadow: var(--shadow-lg);
+}
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+/* ==========================================================================
+   CORPORATE CLIENTS & TESTIMONIALS
+   ========================================================================== */
+.section-reviews {
+  padding: 6rem 0;
+  background: var(--rp-bg);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.review-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--rp-border);
+  padding: 2.2rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--rp-gold);
+}
+
+.review-stars {
+  color: #e5b84c;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.review-text {
+  font-size: 0.92rem;
+  color: var(--text-main);
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.review-author {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.author-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--rp-gold);
+}
+
+.author-info h5 {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.author-info span {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   STICKY FLOATING ACTIONS (MOBILE & DESKTOP META ADS CONVERSION)
+   ========================================================================== */
+.floating-meta-pill {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.float-whatsapp-btn {
+  background: #25d366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  transition: var(--transition);
+}
+
+.float-whatsapp-btn:hover {
+  transform: scale(1.05);
+  background: #1ebc57;
+}
+
+.float-call-btn {
+  background: var(--rp-dark);
+  color: var(--rp-gold-bright);
+  border: 1px solid var(--rp-gold);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.float-call-btn:hover {
+  background: #182335;
+  transform: scale(1.05);
+}
+
+/* Mobile Bottom Fixed Bar */
+.mobile-sticky-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--rp-dark);
+  border-top: 2px solid var(--rp-gold);
+  padding: 0.75rem 1rem;
+  z-index: 2000;
+  box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 991px) {
+  .mobile-sticky-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.3fr;
+    gap: 0.6rem;
+  }
+  .floating-meta-pill {
+    bottom: 80px;
+    right: 15px;
+  }
+}
+
+.mobile-bar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.75rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* ==========================================================================
+   FOOTER (RP GROUP PATNA REGION)
+   ========================================================================== */
+.rp-footer {
+  background: #060b13;
+  color: #8fa2bd;
+  padding: 5rem 0 2rem;
+  font-size: 0.85rem;
+  border-top: 2px solid var(--rp-gold);
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr 1.2fr 1.4fr;
+  gap: 3.5rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-col-title {
+  font-family: var(--font-royal);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+
+.footer-col-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: var(--rp-gold);
+}
+
+.footer-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  list-style: none;
+}
+
+.footer-links-list a:hover {
+  color: var(--rp-gold-bright);
+  padding-left: 4px;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .engine-grid-room {
+    grid-template-columns: repeat(2, 1fr) 1fr;
+    gap: 1.2rem;
+  }
+  .property-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .rp-nav {
+    display: none;
+  }
+  .rp-mobile-toggle {
+    display: flex;
+  }
+  .banquet-feature-grid,
+  .lead-box-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .engine-grid-room {
+    grid-template-columns: 1fr;
+  }
+  .engine-col {
+    border-right: none;
+    border-bottom: 1px solid var(--rp-border);
+    padding-bottom: 0.85rem;
+  }
+  .form-row-2 {
+    grid-template-columns: 1fr;
+  }
+  .trust-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .footer-columns {
+    grid-template-columns: 1fr;
+  }
+}

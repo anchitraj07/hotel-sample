@@ -1,0 +1,2627 @@
+/* ==========================================================================
+   HÔTEL HERMITAGE MONTE-CARLO - LUXURY HOTEL TEMPLATE
+   Monte-Carlo Société des Bains de Mer Inspired Stylesheet
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Luxury Gold & Metallic Accents */
+  --gold-primary: #c5a467;
+  --gold-light: #dfc285;
+  --gold-dark: #9f7d3e;
+  --gold-soft: rgba(197, 164, 103, 0.12);
+  --gold-border: rgba(197, 164, 103, 0.28);
+  --gold-gradient: linear-gradient(135deg, #ebd6a8 0%, #c5a467 50%, #997839 100%);
+  --gold-glow: 0 0 25px rgba(197, 164, 103, 0.28);
+
+  /* Deep Royal & Mediterranean Tones */
+  --color-primary: #0f1622;
+  --color-primary-dark: #090e16;
+  --color-primary-light: #182232;
+  --color-navy: #152238;
+  --color-azure: #204165;
+
+  /* Refined Light Tones */
+  --bg-body: #faf8f5;
+  --bg-surface: #ffffff;
+  --bg-warm: #f4efe6;
+  --bg-card: #ffffff;
+  --border-light: #e5ded3;
+  --border-subtle: #efe9df;
+
+  /* Typography Colors */
+  --text-dark: #121820;
+  --text-body: #424e5e;
+  --text-muted: #718096;
+  --text-light: #f8f6f0;
+  --text-gold: #b8924b;
+
+  /* Fonts */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Cinzel', 'Cormorant Garamond', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  /* Elevations */
+  --shadow-sm: 0 4px 12px rgba(15, 22, 34, 0.05);
+  --shadow-md: 0 10px 30px rgba(15, 22, 34, 0.08);
+  --shadow-lg: 0 20px 50px rgba(15, 22, 34, 0.14);
+  --shadow-gold: 0 12px 35px rgba(197, 164, 103, 0.22);
+
+  /* Layout */
+  --container-max: 1320px;
+  --transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+}
+
+/* Reset & Box Sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-body);
+  color: var(--text-body);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  border: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  transition: var(--transition);
+}
+
+/* Global Container */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.container-wide {
+  width: 100%;
+  max-width: 1540px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* Typography Utilities */
+.heading-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.heading-serif {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.text-gold {
+  color: var(--gold-primary) !important;
+}
+
+.sub-heading {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+  margin-bottom: 0.85rem;
+  position: relative;
+}
+
+.sub-heading::after {
+  content: "";
+  display: inline-block;
+  width: 35px;
+  height: 1px;
+  background: var(--gold-primary);
+  vertical-align: middle;
+  margin-left: 12px;
+}
+
+.sub-heading.centered::before {
+  content: "";
+  display: inline-block;
+  width: 35px;
+  height: 1px;
+  background: var(--gold-primary);
+  vertical-align: middle;
+  margin-right: 12px;
+}
+
+/* Luxury Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.95rem 2rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.btn-gold {
+  background: var(--gold-gradient);
+  color: #111;
+  box-shadow: 0 6px 20px rgba(197, 164, 103, 0.3);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(197, 164, 103, 0.45);
+  filter: brightness(1.06);
+}
+
+.btn-outline-gold {
+  border: 1px solid var(--gold-primary);
+  color: var(--gold-primary);
+  background: transparent;
+}
+
+.btn-outline-gold:hover {
+  background: var(--gold-primary);
+  color: #111;
+  transform: translateY(-2px);
+}
+
+.btn-outline-white {
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+}
+
+.btn-outline-white:hover {
+  background: #ffffff;
+  color: var(--color-primary);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-dark {
+  background: var(--color-primary);
+  color: #ffffff;
+  border: 1px solid var(--color-primary-light);
+}
+
+.btn-dark:hover {
+  background: var(--color-primary-light);
+  border-color: var(--gold-primary);
+  color: var(--gold-light);
+}
+
+.btn-sm {
+  padding: 0.65rem 1.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+}
+
+.btn-lg {
+  padding: 1.15rem 2.6rem;
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   TOP RESORT UMBRELLA BAR (MONTE-CARLO SOCIÉTÉ DES BAINS DE MER)
+   ========================================================================== */
+.sbm-topbar {
+  background: #090d14;
+  color: #a5b0c0;
+  font-size: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 1010;
+}
+
+.sbm-topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+}
+
+.sbm-brand-group {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.sbm-corporate-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #dfd8c8;
+  font-family: var(--font-display);
+  letter-spacing: 0.16em;
+  font-size: 0.68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.sbm-corporate-link:hover {
+  color: var(--gold-light);
+}
+
+.sbm-resort-dropdown {
+  position: relative;
+}
+
+.sbm-resort-trigger {
+  color: #8c97a8;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.sbm-resort-trigger:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.sbm-resort-menu {
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  background: #111722;
+  border: 1px solid var(--gold-border);
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-sm);
+  min-width: 250px;
+  display: none;
+  flex-direction: column;
+  padding: 0.65rem 0;
+  z-index: 1050;
+}
+
+.sbm-resort-dropdown:hover .sbm-resort-menu {
+  display: flex;
+}
+
+.sbm-resort-menu a {
+  padding: 0.6rem 1.25rem;
+  color: #cfd6e0;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sbm-resort-menu a:hover {
+  background: rgba(197, 164, 103, 0.1);
+  color: var(--gold-light);
+  padding-left: 1.5rem;
+}
+
+.sbm-utilities {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.sbm-util-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #9aa5b6;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+}
+
+.sbm-util-item:hover {
+  color: #ffffff;
+}
+
+.sbm-currency-select,
+.sbm-lang-select {
+  background: transparent;
+  color: #a5b0c0;
+  font-size: 0.72rem;
+  cursor: pointer;
+  padding: 0.15rem 0.4rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.sbm-currency-select option,
+.sbm-lang-select option {
+  background: #111722;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   PRIMARY NAVIGATION (HÔTEL HERMITAGE MONTE-CARLO)
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(15, 22, 34, 0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(197, 164, 103, 0.2);
+  transition: var(--transition);
+}
+
+.site-header.scrolled {
+  background: rgba(11, 16, 25, 0.98);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 86px;
+  transition: var(--transition);
+}
+
+.site-header.scrolled .header-container {
+  height: 74px;
+}
+
+/* Hotel Brand Emblem & Wordmark */
+.hotel-brand {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.hotel-emblem {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hotel-wordmark {
+  display: flex;
+  flex-direction: column;
+}
+
+.hotel-wordmark .palace-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: #ffffff;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.hotel-wordmark .destination {
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.hotel-wordmark .stars {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  color: #e5c378;
+  margin-top: 1px;
+}
+
+/* Nav Menu Items */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nav-link {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #d8e0ea;
+  padding: 0.4rem 0;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold-gradient);
+  transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--gold-light);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.header-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-header-book {
+  padding: 0.8rem 1.6rem;
+  font-size: 0.72rem;
+}
+
+/* Mobile Nav Toggle */
+.mobile-nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 30px;
+  background: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.mobile-nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--gold-primary);
+  transition: var(--transition);
+}
+
+/* ==========================================================================
+   HERO CINEMATIC BANNER
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  min-height: 86vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0b1017;
+  overflow: hidden;
+}
+
+.hero-slider-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.2s ease, transform 6s ease;
+  transform: scale(1.05);
+}
+
+.hero-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 22, 34, 0.45) 0%,
+    rgba(15, 22, 34, 0.65) 55%,
+    rgba(15, 22, 34, 0.95) 100%
+  );
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6.5rem;
+  color: #ffffff;
+}
+
+.hero-badge-leading {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.45rem 1.2rem;
+  background: rgba(15, 22, 34, 0.65);
+  border: 1px solid var(--gold-border);
+  border-radius: 40px;
+  backdrop-filter: blur(10px);
+  margin-bottom: 1.75rem;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+}
+
+.hero-badge-leading svg {
+  color: var(--gold-primary);
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 5.8vw, 5.2rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  margin-bottom: 1.3rem;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.hero-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold-light);
+}
+
+.hero-description {
+  font-size: clamp(1rem, 1.3vw, 1.2rem);
+  color: #e2e8f0;
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+  font-weight: 300;
+  line-height: 1.7;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+/* Slider Controls */
+.hero-controls {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero-nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(15, 22, 34, 0.5);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.hero-nav-btn:hover {
+  background: var(--gold-primary);
+  color: #111;
+  border-color: var(--gold-primary);
+}
+
+/* ==========================================================================
+   INTERACTIVE BOOKING ENGINE BAR
+   ========================================================================== */
+.booking-bar-wrapper {
+  position: relative;
+  z-index: 50;
+  margin-top: -55px;
+  margin-bottom: 4rem;
+}
+
+.booking-bar {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  box-shadow: 0 18px 45px rgba(15, 22, 34, 0.15), 0 0 0 1px var(--border-light);
+  padding: 1.25rem 1.75rem;
+  display: grid;
+  grid-template-columns: 1.8fr 1.8fr 1.6fr 1.2fr 1.8fr;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.booking-col {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-right: 1px solid var(--border-light);
+  padding-right: 1.2rem;
+}
+
+.booking-col:nth-last-child(2) {
+  border-right: none;
+}
+
+.booking-label {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.booking-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.booking-input-wrap input,
+.booking-input-wrap select {
+  width: 100%;
+  background: transparent;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+}
+
+.booking-guest-summary {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.booking-btn-submit {
+  width: 100%;
+  padding: 1.1rem 1.4rem;
+}
+
+/* Guest Selector Dropdown Modal */
+.guest-picker-dropdown {
+  position: absolute;
+  top: calc(100% + 15px);
+  left: 0;
+  background: #ffffff;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.4rem;
+  width: 290px;
+  display: none;
+  flex-direction: column;
+  gap: 1.1rem;
+  z-index: 100;
+}
+
+.guest-picker-dropdown.active {
+  display: flex;
+}
+
+.guest-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.guest-info span {
+  display: block;
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--text-dark);
+}
+
+.guest-info small {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.counter-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.counter-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-surface);
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.counter-btn:hover {
+  background: var(--gold-soft);
+  border-color: var(--gold-primary);
+  color: var(--gold-dark);
+}
+
+.counter-val {
+  font-size: 0.95rem;
+  font-weight: 600;
+  min-width: 18px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   RESORT PRIVILEGES STRIP (THE CERCLE MONTE-CARLO ADVANTAGE)
+   ========================================================================== */
+.privileges-strip {
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 2.2rem 0;
+  border-top: 1px solid rgba(197, 164, 103, 0.25);
+  border-bottom: 1px solid rgba(197, 164, 103, 0.25);
+}
+
+.privileges-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.privilege-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+
+.privilege-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: rgba(197, 164, 103, 0.12);
+  border: 1px solid var(--gold-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-light);
+}
+
+.privilege-text h4 {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+
+.privilege-text p {
+  font-size: 0.8rem;
+  color: #a3b0c2;
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   PALACE ESSENCE / OVERVIEW SECTION
+   ========================================================================== */
+.section-palace {
+  padding: 7rem 0;
+  background: var(--bg-body);
+}
+
+.essence-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.essence-gallery {
+  position: relative;
+}
+
+.essence-main-img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+}
+
+.essence-floating-img {
+  position: absolute;
+  bottom: -40px;
+  right: -30px;
+  width: 260px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border: 5px solid #ffffff;
+}
+
+.essence-badge-heritage {
+  position: absolute;
+  top: 30px;
+  left: -25px;
+  background: var(--color-primary);
+  color: var(--gold-light);
+  border: 1px solid var(--gold-border);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.essence-badge-heritage span {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+}
+
+.essence-badge-heritage small {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.essence-content h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.5vw, 3.4rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.essence-lead {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--gold-dark);
+  margin-bottom: 1.4rem;
+  line-height: 1.5;
+}
+
+.essence-text {
+  font-size: 0.95rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  margin-bottom: 2.2rem;
+}
+
+.essence-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+  padding: 1.5rem 0;
+  margin-bottom: 2.5rem;
+}
+
+.stat-item h3 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.stat-item p {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+}
+
+/* ==========================================================================
+   ROOMS & SUITES SECTION
+   ========================================================================== */
+.section-rooms {
+  padding: 7rem 0;
+  background: #ffffff;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 3.5rem;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.3rem, 3.6vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--text-dark);
+  margin-bottom: 1.1rem;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* Filter Tabs */
+.filter-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.65rem 1.6rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-radius: 40px;
+  border: 1px solid var(--border-light);
+  color: var(--text-body);
+  background: var(--bg-surface);
+  transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--color-primary);
+  color: var(--gold-light);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 15px rgba(15, 22, 34, 0.15);
+}
+
+/* Room Cards Grid */
+.rooms-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2rem;
+}
+
+.room-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.room-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--gold-border);
+}
+
+.room-img-wrap {
+  position: relative;
+  height: 290px;
+  overflow: hidden;
+}
+
+.room-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.room-card:hover .room-img-wrap img {
+  transform: scale(1.06);
+}
+
+.room-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  padding: 0.35rem 0.85rem;
+  background: rgba(15, 22, 34, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--gold-border);
+  color: var(--gold-light);
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+}
+
+.room-view-badge {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+  padding: 0.35rem 0.85rem;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-primary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.room-card-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.room-category {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  color: var(--gold-dark);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.room-name {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  font-weight: 400;
+  color: var(--text-dark);
+  line-height: 1.3;
+  margin-bottom: 0.9rem;
+}
+
+.room-specs {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 1.2rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.spec-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.room-perks {
+  list-style: none;
+  margin-bottom: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  color: var(--text-body);
+}
+
+.room-perks li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.room-perks li svg {
+  color: var(--gold-primary);
+  flex-shrink: 0;
+}
+
+.room-card-footer {
+  margin-top: auto;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.room-price-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.room-price-wrap small {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.room-price {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.room-price span {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
+.room-card-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* ==========================================================================
+   GASTRONOMY & BARS (MICHELIN STARRED DINING)
+   ========================================================================== */
+.section-dining {
+  padding: 7.5rem 0;
+  background: var(--color-primary);
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.dining-lead-wrap {
+  text-align: center;
+  max-width: 840px;
+  margin: 0 auto 4.5rem;
+}
+
+.dining-lead-wrap .section-title {
+  color: #ffffff;
+}
+
+.dining-lead-wrap .section-subtitle {
+  color: #cbd5e1;
+}
+
+.dining-feature-card {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  background: var(--color-primary-light);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--gold-border);
+  overflow: hidden;
+  margin-bottom: 4rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.dining-feature-img {
+  position: relative;
+  min-height: 480px;
+}
+
+.dining-feature-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dining-feature-badge {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  background: rgba(15, 22, 34, 0.9);
+  border: 1px solid var(--gold-border);
+  padding: 0.5rem 1.1rem;
+  border-radius: var(--radius-sm);
+  color: var(--gold-light);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dining-feature-content {
+  padding: 4rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.dining-chef-label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.dining-restaurant-name {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.2vw, 3rem);
+  font-weight: 300;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  color: #ffffff;
+}
+
+.dining-quote {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #e2d7c3;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.dining-desc {
+  font-size: 0.92rem;
+  color: #94a3b8;
+  line-height: 1.8;
+  margin-bottom: 2.2rem;
+}
+
+.dining-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.meta-item span {
+  display: block;
+  font-size: 0.68rem;
+  font-family: var(--font-display);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 0.2rem;
+}
+
+.meta-item p {
+  font-size: 0.85rem;
+  color: #e2e8f0;
+}
+
+/* Secondary Dining Venues Grid */
+.dining-secondary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2rem;
+}
+
+.venue-card {
+  background: var(--color-primary-light);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.venue-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold-border);
+  box-shadow: var(--shadow-gold);
+}
+
+.venue-img {
+  height: 240px;
+  overflow: hidden;
+}
+
+.venue-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.venue-card:hover .venue-img img {
+  transform: scale(1.05);
+}
+
+.venue-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.venue-subtitle {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.venue-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 0.85rem;
+}
+
+.venue-desc {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.venue-actions {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+   THERMES MARINS MONTE-CARLO (WELLNESS & SPA)
+   ========================================================================== */
+.section-spa {
+  padding: 7.5rem 0;
+  background: var(--bg-warm);
+}
+
+.spa-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.spa-content h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.3rem, 3.5vw, 3.3rem);
+  font-weight: 300;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin-bottom: 1.3rem;
+}
+
+.spa-lead {
+  font-size: 1.05rem;
+  color: var(--gold-dark);
+  font-weight: 500;
+  margin-bottom: 1.4rem;
+  line-height: 1.6;
+}
+
+.spa-desc {
+  font-size: 0.92rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.spa-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.3rem;
+  margin-bottom: 2.5rem;
+}
+
+.spa-highlight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.spa-highlight-item svg {
+  color: var(--gold-primary);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.spa-highlight-item h5 {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+  margin-bottom: 0.2rem;
+}
+
+.spa-highlight-item p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.spa-imagery {
+  position: relative;
+}
+
+.spa-primary-img {
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+}
+
+.spa-floater-card {
+  position: absolute;
+  bottom: -35px;
+  left: -30px;
+  background: #ffffff;
+  padding: 1.8rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+  max-width: 270px;
+}
+
+.spa-floater-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--gold-dark);
+  margin-bottom: 0.35rem;
+}
+
+.spa-floater-card p {
+  font-size: 0.78rem;
+  color: var(--text-body);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   EXCLUSIVE OFFERS & PACKAGES
+   ========================================================================== */
+.section-offers {
+  padding: 7rem 0;
+  background: #ffffff;
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.2rem;
+}
+
+.offer-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.offer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--gold-border);
+}
+
+.offer-img {
+  height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.offer-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.offer-card:hover .offer-img img {
+  transform: scale(1.06);
+}
+
+.offer-tag {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: var(--gold-gradient);
+  color: #111;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-sm);
+}
+
+.offer-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.offer-validity {
+  font-size: 0.75rem;
+  color: var(--gold-dark);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.offer-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--text-dark);
+  line-height: 1.3;
+  margin-bottom: 0.85rem;
+}
+
+.offer-desc {
+  font-size: 0.85rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 1.4rem;
+}
+
+.offer-includes {
+  list-style: none;
+  margin-bottom: 1.8rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.offer-includes li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.offer-footer {
+  margin-top: auto;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+   MONTE-CARLO RESORT EXPERIENCES
+   ========================================================================== */
+.section-experiences {
+  padding: 7rem 0;
+  background: #0d131c;
+  color: #ffffff;
+}
+
+.experiences-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.exp-card {
+  position: relative;
+  height: 420px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: var(--transition);
+}
+
+.exp-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.exp-card:hover img {
+  transform: scale(1.08);
+}
+
+.exp-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 19, 28, 0.1) 0%,
+    rgba(13, 19, 28, 0.55) 50%,
+    rgba(13, 19, 28, 0.95) 100%
+  );
+  padding: 2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: var(--transition);
+}
+
+.exp-category {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.exp-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 0.65rem;
+}
+
+.exp-card p {
+  font-size: 0.8rem;
+  color: #a0aec0;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: var(--transition);
+  max-height: 0;
+  overflow: hidden;
+}
+
+.exp-card:hover p {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 80px;
+  margin-bottom: 0.85rem;
+}
+
+/* ==========================================================================
+   PHOTO & VIDEO GALLERY (LIGHTBOX)
+   ========================================================================== */
+.section-gallery {
+  padding: 7rem 0;
+  background: var(--bg-body);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 240px;
+  gap: 1.2rem;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.gallery-item.span-2 {
+  grid-column: span 2;
+}
+
+.gallery-item.row-2 {
+  grid-row: span 2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 22, 34, 0.6);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  color: #ffffff;
+  transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-hover-overlay {
+  opacity: 1;
+}
+
+.gallery-hover-overlay span {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(12px);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.lightbox-modal.active {
+  display: flex;
+}
+
+.lightbox-img-wrap {
+  position: relative;
+  max-width: 90vw;
+  max-height: 85vh;
+}
+
+.lightbox-img-wrap img {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-lg);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-size: 2rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.lightbox-nav-btn:hover {
+  background: var(--gold-primary);
+  color: #111;
+}
+
+.lightbox-prev {
+  left: 30px;
+}
+
+.lightbox-next {
+  right: 30px;
+}
+
+/* ==========================================================================
+   AWARDS, PRESS & REVIEWS
+   ========================================================================== */
+.section-awards {
+  padding: 5.5rem 0;
+  background: #ffffff;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.awards-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+
+.award-item {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.award-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-primary);
+}
+
+.award-info h5 {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+  margin-bottom: 0.2rem;
+}
+
+.award-info p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   LOCATION & CONCIERGE (MONACO)
+   ========================================================================== */
+.section-location {
+  padding: 7rem 0;
+  background: var(--bg-surface);
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.location-info h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 3.2vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: var(--text-dark);
+  margin-bottom: 1.2rem;
+}
+
+.location-address {
+  font-size: 1rem;
+  color: var(--text-body);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.distances-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.dist-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 0.88rem;
+}
+
+.dist-name {
+  color: var(--text-dark);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.dist-val {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gold-dark);
+}
+
+.map-card {
+  position: relative;
+  height: 480px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
+}
+
+.map-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.map-pin-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(15, 22, 34, 0.9);
+  border: 1px solid var(--gold-border);
+  padding: 1.2rem 1.8rem;
+  border-radius: var(--radius-sm);
+  color: #ffffff;
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(8px);
+}
+
+.map-pin-overlay h4 {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  letter-spacing: 0.18em;
+  color: var(--gold-light);
+  margin-bottom: 0.3rem;
+}
+
+.map-pin-overlay p {
+  font-size: 0.75rem;
+  color: #cbd5e1;
+}
+
+/* ==========================================================================
+   NEWSLETTER & VIP INVITATIONS
+   ========================================================================== */
+.section-newsletter {
+  padding: 5.5rem 0;
+  background: var(--color-primary-dark);
+  color: #ffffff;
+  border-top: 1px solid var(--gold-border);
+  border-bottom: 1px solid var(--gold-border);
+  text-align: center;
+}
+
+.newsletter-box {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.newsletter-box h3 {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  font-weight: 300;
+  margin-bottom: 0.8rem;
+}
+
+.newsletter-box p {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin-bottom: 2rem;
+}
+
+.newsletter-form {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.newsletter-input {
+  flex-grow: 1;
+  padding: 1.05rem 1.5rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-sm);
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.newsletter-input:focus {
+  border-color: var(--gold-primary);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ==========================================================================
+   FOOTER (MONTE-CARLO SBM RESORT HUB)
+   ========================================================================== */
+.site-footer {
+  background: #080c12;
+  color: #8c97a8;
+  padding: 5rem 0 2.5rem;
+  font-size: 0.85rem;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.8fr 1.2fr 1.2fr 1.4fr;
+  gap: 3.5rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-brand h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand small {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  color: var(--gold-light);
+  display: block;
+  margin-bottom: 1.2rem;
+}
+
+.footer-brand p {
+  font-size: 0.82rem;
+  color: #7b889a;
+  line-height: 1.7;
+  margin-bottom: 1.6rem;
+}
+
+.footer-col h5 {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 1.4rem;
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+
+.footer-col h5::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 25px;
+  height: 1px;
+  background: var(--gold-primary);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-links a {
+  color: #8c97a8;
+  font-size: 0.82rem;
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--gold-light);
+  padding-left: 4px;
+}
+
+.footer-social-links {
+  display: flex;
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+.social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: var(--transition);
+}
+
+.social-btn:hover {
+  background: var(--gold-primary);
+  border-color: var(--gold-primary);
+  color: #111;
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2.5rem;
+  font-size: 0.75rem;
+  color: #626e80;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+.footer-legal-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-legal-links a:hover {
+  color: #cbd5e1;
+}
+
+/* ==========================================================================
+   INTERACTIVE BOOKING DRAWER / MODAL
+   ========================================================================== */
+.booking-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 12, 18, 0.82);
+  backdrop-filter: blur(10px);
+  z-index: 3000;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.booking-drawer-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.booking-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 620px;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: -15px 0 45px rgba(0, 0, 0, 0.4);
+  z-index: 3001;
+  transform: translateX(100%);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-drawer.active {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  padding: 1.75rem 2rem;
+  background: var(--color-primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--gold-border);
+}
+
+.drawer-header h3 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.drawer-close {
+  font-size: 1.6rem;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.drawer-body {
+  padding: 2rem;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.checkout-steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.step-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.step-indicator.active {
+  color: var(--gold-dark);
+  font-weight: 700;
+}
+
+.step-number {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--bg-warm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+.step-indicator.active .step-number {
+  background: var(--gold-primary);
+  color: #111;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.95rem 1.2rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  color: var(--text-dark);
+  font-size: 0.92rem;
+  transition: var(--transition);
+}
+
+.form-control:focus {
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 0 3px rgba(197, 164, 103, 0.15);
+}
+
+.booking-summary-box {
+  background: var(--bg-warm);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 1.5rem;
+  margin-bottom: 1.8rem;
+}
+
+.summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.7rem;
+  font-size: 0.88rem;
+}
+
+.summary-row.total {
+  border-top: 1px solid var(--border-light);
+  padding-top: 0.8rem;
+  margin-top: 0.8rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text-dark);
+}
+
+.drawer-footer {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid var(--border-light);
+  background: #ffffff;
+}
+
+/* ==========================================================================
+   ROOM DETAIL MODAL & TABLE RESERVATION MODAL
+   ========================================================================== */
+.custom-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 15, 23, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 3500;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.custom-modal.active {
+  display: flex;
+}
+
+.modal-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  max-width: 800px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-light);
+  position: relative;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-size: 1.8rem;
+  color: var(--text-dark);
+  cursor: pointer;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.8);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-img-hero {
+  height: 320px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.modal-content-pad {
+  padding: 2.5rem;
+}
+
+/* Toast Notifications */
+.toast-notice {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--color-primary);
+  color: #ffffff;
+  border: 1px solid var(--gold-border);
+  padding: 1.2rem 1.8rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  z-index: 4000;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.toast-notice.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast-notice svg {
+  color: var(--gold-light);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .booking-bar {
+    grid-template-columns: repeat(2, 1fr) 1fr;
+    gap: 1.2rem;
+  }
+  .booking-col {
+    border-right: none;
+    padding-right: 0;
+  }
+  .booking-col:nth-child(1),
+  .booking-col:nth-child(2) {
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 1rem;
+  }
+  .rooms-grid,
+  .dining-secondary-grid,
+  .offers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .experiences-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .privileges-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-top {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .main-nav {
+    display: none;
+  }
+  .mobile-nav-toggle {
+    display: flex;
+  }
+  .mobile-menu-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 100vh;
+    background: #0f1622;
+    border-right: 1px solid var(--gold-border);
+    z-index: 2500;
+    padding: 2.5rem 2rem;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .mobile-menu-drawer.active {
+    transform: translateX(0);
+  }
+  .mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .mobile-nav-links a {
+    font-family: var(--font-display);
+    font-size: 0.88rem;
+    letter-spacing: 0.15em;
+    color: #e2e8f0;
+    text-transform: uppercase;
+  }
+  .mobile-nav-links a:hover,
+  .mobile-nav-links a.active {
+    color: var(--gold-light);
+  }
+  .essence-grid,
+  .dining-feature-card,
+  .spa-grid,
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .essence-floating-img {
+    position: static;
+    width: 100%;
+    height: 300px;
+    margin-top: 1.5rem;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-item.span-2 {
+    grid-column: span 1;
+  }
+  .gallery-item.row-2 {
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .sbm-topbar-inner {
+    flex-direction: column;
+    height: auto;
+    padding: 0.5rem 0;
+    gap: 0.4rem;
+  }
+  .booking-bar {
+    grid-template-columns: 1fr;
+  }
+  .booking-col {
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 0.85rem;
+  }
+  .rooms-grid,
+  .dining-secondary-grid,
+  .offers-grid,
+  .experiences-grid,
+  .privileges-grid {
+    grid-template-columns: 1fr;
+  }
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+  .awards-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-controls {
+    display: none;
+  }
+  .dining-feature-content {
+    padding: 2.5rem 1.5rem;
+  }
+}
