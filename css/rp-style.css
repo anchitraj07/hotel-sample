@@ -60,6 +60,7 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
 }
 
 body {
@@ -67,7 +68,8 @@ body {
   background-color: var(--rp-bg);
   color: var(--text-main);
   line-height: 1.65;
-  overflow-x: hidden;
+  overflow-x: clip;
+  position: relative;
   padding-bottom: 74px; /* Space for sticky bottom bar on mobile */
 }
 
@@ -240,7 +242,7 @@ button {
   padding: 0.6rem 0;
   border-bottom: 1px solid rgba(212, 175, 55, 0.25);
   position: relative;
-  z-index: 1020;
+  z-index: 900;
 }
 
 .ticker-content {
@@ -293,6 +295,8 @@ button {
   font-size: 0.76rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   padding: 0.45rem 0;
+  position: relative;
+  z-index: 900;
 }
 
 .rp-utility-inner {
@@ -360,8 +364,8 @@ button {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
-  background: rgba(11, 19, 32, 0.95);
+  z-index: 1200;
+  background: rgba(11, 19, 32, 0.96);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--rp-dark-border);
   transition: var(--transition);
@@ -377,6 +381,7 @@ button {
   align-items: center;
   justify-content: space-between;
   height: 84px;
+  gap: 1rem;
   transition: var(--transition);
 }
 
@@ -387,7 +392,8 @@ button {
 @media (max-width: 768px) {
   .rp-header-inner,
   .rp-header.scrolled .rp-header-inner {
-    height: 68px;
+    height: 64px;
+    gap: 0.5rem;
   }
 }
 
@@ -396,6 +402,8 @@ button {
   display: flex;
   align-items: center;
   gap: 0.85rem;
+  min-width: 0;
+  flex-shrink: 0;
 }
 
 .rp-crest {
@@ -410,6 +418,7 @@ button {
 .rp-brand-text {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .rp-brand-title {
@@ -420,6 +429,7 @@ button {
   color: #ffffff;
   text-transform: uppercase;
   line-height: 1.15;
+  white-space: nowrap;
 }
 
 .rp-brand-title span {
@@ -429,20 +439,46 @@ button {
 .rp-brand-sub {
   font-size: 0.62rem;
   font-weight: 600;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.22em;
   color: var(--rp-gold-bright);
   text-transform: uppercase;
   margin-top: 2px;
+  white-space: nowrap;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+  .rp-brand {
+    gap: 0.65rem;
+  }
+  .rp-crest {
+    width: 36px;
+    height: 36px;
+  }
+  .rp-crest svg {
+    width: 36px;
+    height: 36px;
+  }
   .rp-brand-title {
-    font-size: 1rem;
-    letter-spacing: 0.12em;
+    font-size: 0.95rem;
+    letter-spacing: 0.1em;
   }
   .rp-brand-sub {
-    font-size: 0.55rem;
-    letter-spacing: 0.18em;
+    font-size: 0.52rem;
+    letter-spacing: 0.12em;
+  }
+}
+
+@media (max-width: 380px) {
+  .rp-brand {
+    gap: 0.5rem;
+  }
+  .rp-brand-title {
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+  }
+  .rp-brand-sub {
+    font-size: 0.46rem;
+    letter-spacing: 0.08em;
   }
 }
 
@@ -450,7 +486,8 @@ button {
 .rp-nav {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  gap: 1.5rem;
+  flex-shrink: 1;
 }
 
 .rp-nav-link {
@@ -462,6 +499,17 @@ button {
   color: #d1dde9;
   position: relative;
   padding: 0.4rem 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 1360px) {
+  .rp-nav {
+    gap: 1rem;
+  }
+  .rp-nav-link {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+  }
 }
 
 .rp-nav-link::after {
@@ -489,6 +537,7 @@ button {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-shrink: 0;
 }
 
 /* Luxury Buttons */
@@ -580,6 +629,8 @@ button {
   height: 44px;
   border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  flex-shrink: 0;
 }
 
 .rp-mobile-toggle span {
@@ -590,15 +641,35 @@ button {
   transition: var(--transition);
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1180px) {
   .rp-nav {
-    display: none;
+    display: none !important;
   }
   .rp-mobile-toggle {
-    display: flex;
+    display: flex !important;
   }
-  .btn-rp-gold.btn-hide-mobile {
-    display: none;
+}
+
+@media (max-width: 1180px) and (min-width: 651px) {
+  .header-cta-cluster .btn-rp-gold,
+  .header-cta-cluster .whatsapp-pill-sm,
+  .header-cta-cluster .btn-rp-dark {
+    padding: 0.55rem 0.95rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+  }
+}
+
+@media (max-width: 650px) {
+  /* On mobile phones, hide the header text CTA button so it NEVER collides with the brand crest & title! */
+  /* The mobile sticky bottom conversion bar provides 1-tap Call, WhatsApp, and Booking */
+  .header-cta-cluster .btn-rp-gold,
+  .header-cta-cluster .whatsapp-pill-sm,
+  .header-cta-cluster .btn-rp-dark {
+    display: none !important;
+  }
+  .header-cta-cluster {
+    gap: 0;
   }
 }
 
@@ -765,6 +836,25 @@ button {
   }
 }
 
+/* Subpage Hero */
+.subpage-hero {
+  position: relative;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #070d16;
+  overflow: hidden;
+  padding: 5.5rem 1.5rem 4.5rem;
+}
+
+@media (max-width: 768px) {
+  .subpage-hero {
+    min-height: 300px;
+    padding: 4rem 1rem 3rem;
+  }
+}
+
 /* ==========================================================================
    FLOATING BOOKING & BANQUET INQUIRY ENGINE (META ADS CONVERSION)
    ========================================================================== */
@@ -865,7 +955,7 @@ button {
 
 @media (max-width: 768px) {
   .booking-engine-wrapper {
-    margin-top: -35px;
+    margin-top: 1.5rem !important;
     margin-bottom: 3rem;
   }
   .booking-engine-card {
@@ -1625,5 +1715,43 @@ button {
 @media (max-width: 768px) {
   input, select, textarea {
     font-size: 16px !important; /* Prevents unwanted iOS browser zoom */
+  }
+}
+
+/* ==========================================================================
+   BOOKING MODAL DIALOG
+   ========================================================================== */
+#rpBookingModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 10, 18, 0.88);
+  backdrop-filter: blur(8px);
+  z-index: 3500;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.rp-modal-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  max-width: 600px;
+  width: 100%;
+  padding: 2.5rem;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--rp-gold);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@media (max-width: 600px) {
+  #rpBookingModal {
+    padding: 1rem;
+  }
+  .rp-modal-card {
+    padding: 2rem 1.2rem;
   }
 }
